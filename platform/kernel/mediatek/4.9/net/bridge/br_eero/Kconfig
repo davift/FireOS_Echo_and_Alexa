@@ -1,0 +1,26 @@
+#
+# Copyright (c) 2022 Amazon.com, Inc. or its affiliates.
+#
+
+config EERO_BR
+	tristate "Enables eero bridge support"
+	select BRIDGE
+	depends on BIFROST_MESH
+	default n
+	---help---
+	  If you say Y here, eero bridge support for bridge will be enabled.
+	  This module has the stamp, roam and potentially other features inside.
+
+	  Say N to exclude this support and reduce the binary size.
+
+	  If unsure, say Y.
+
+config EERO_BR_LOG_FILE
+	tristate "Enables logging to file"
+	depends on BIFROST_MESH
+	default n
+	---help---
+	  If you say Y here, then the eero bridge logs will be piped to a
+	  file instead of the dmesg.
+
+	  If unsure, say N.

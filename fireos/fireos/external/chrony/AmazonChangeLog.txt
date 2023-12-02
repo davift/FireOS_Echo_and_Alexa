@@ -1,0 +1,15 @@
+WARNING: this package has been modified from the original Open Source GPL v2 licensed project https://chrony.tuxfamily.org
+
+September 11, 2018
+	1. Added glob.c and glob.h since they are not part of standard Android
+	   header files. Copied them from /fireos/external/smartmontools/
+	   unmodified.
+	2. Added sys/shm.h to enable shared memory IPC calls.
+	   Copied the functions part of external/fio/os/os-android.h
+	3. ntp_io_linux.c: added definitions for ethtool_cmd_speed()
+	   and ethtool_cmd_speed_set()
+	4. nameserv.c: added declaration for res_init()
+
+March 22, 2020
+    1. Remove dependency on chronyd.pid file for start
+    2. Define Chronyd as core service

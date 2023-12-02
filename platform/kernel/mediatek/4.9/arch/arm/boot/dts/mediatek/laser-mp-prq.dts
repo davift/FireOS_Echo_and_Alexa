@@ -1,0 +1,34 @@
+/*
+ * Copyright (c) 2021 Amazon.com
+ *
+ * SPDX-License-Identifier: (GPL-2.0)
+ */
+
+/dts-v1/;
+#include "laser-dvt.dtsi"
+
+/ {
+	model = "Amazon Laser MP PRQ";
+	compatible = "amzn,laser-mp-prq", "mediatek,mt8512";
+
+	chosen {
+		bootargs = "vmalloc=496M";
+	};
+};
+
+&i2c_dsp {
+
+	/* Temperature sensor AS6200 */
+	as6200_i2c2_48: as6200@48 {
+		compatible = "ams,as6200";
+		reg = <0x48>;
+		temp_check_low_limit = <60000>;
+		temp_check_high_limit = <87000>;
+		status = "okay";
+	};
+
+};
+
+&tmp_112_i2c2_4b {
+	status = "disabled";
+};

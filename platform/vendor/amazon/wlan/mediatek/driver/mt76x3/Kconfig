@@ -1,0 +1,13 @@
+menuconfig MTK_WIFI_DRIVER
+    tristate "Mediatek Driver Support"
+    depends on CFG80211
+    depends on m
+    ---help---
+      This will enable the support for the Mediatek drivers,
+if MTK_WIFI_DRIVER
+config MT76x3
+    tristate "Mediatek MT76x3 support"
+    depends on m
+    ---help---
+      This will enable the support for the Mediatek MT76x3 drivers,
+endif

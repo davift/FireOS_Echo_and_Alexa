@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) 2020-2021 Amazon.com
+ *
+ * SPDX-License-Identifier: (GPL-2.0)
+ */
+
+/dts-v1/;
+#include "laser-dvt.dtsi"
+
+/ {
+	model = "Amazon Laser DVT/PVT";
+	compatible = "amzn,laser-dvt", "amzn,laser-pvt", "mediatek,mt8512";
+
+	chosen {
+		bootargs = "vmalloc=496M";
+	};
+};
